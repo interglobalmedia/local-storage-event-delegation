@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 html {
     box-sizing: border-box;
     background: url('http://wes.io/hx9M/oh-la-la.jpg') center no-repeat;
@@ -7,7 +12,6 @@ html {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif
 }
 
 *, *:before, *:after {
@@ -24,27 +28,32 @@ svg {
 }
 
 .wrapper {
+    font-family: 'Raleway', sans-serif;
     padding: 20px;
     max-width: 350px;
-    background: rgba(255, 255, 255, 0.95);
+    background: #eed5d2;
     box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #8b636c;
+    letter-spacing: 0.1em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-h2 {
+.wrapper h2 {
     text-align: center;
     margin: 0;
-    font-weight: 200;
+    font-family: 'Overpass', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+    color: #8b4789;
 }
 
 .plates {
-    margin: 0;
-    padding: 0;
     text-align: left;
     list-style: none;
 }
 
 .plates li {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #fff0f5;
     padding: 10px 0;
     font-weight: 100;
     display: flex;
@@ -76,4 +85,19 @@ h2 {
     padding: 10px;
     outline: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.1em;
+}
+
+input[type=submit] {
+    background: #8b7d7b;
+    color: black;
+    border: none;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-family: 'Raleway', sans-serif;
+}
+
+select {
+    margin-bottom: 12px;
 }
