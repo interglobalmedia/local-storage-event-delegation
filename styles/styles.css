@@ -98,3 +98,15 @@ input[type=submit] {
     font-family: 'Raleway', sans-serif;
 
 }
+
+.buttons {
+    padding: 5px;
+    background: #8b7d7b;
+    border-radius: 3px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-right: 5px;
+}
+
+.buttons:nth-of-type(3) {
+    margin-right: 0;
+}
