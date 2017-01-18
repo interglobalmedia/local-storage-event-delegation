@@ -1,8 +1,10 @@
 const addItems = document.querySelector('.add-items');
 const itemsList = document.querySelector('.plates');
 
+const buttons = document.querySelector('.buttons');
+
 // try get from localStorage, and if not there, fall back to empty array.
-const items = JSON.parse(localStorage.getItem('items')) || [];
+let items = JSON.parse(localStorage.getItem('items')) || [];
 
 function addItem(e) {
     // so that the page does not refresh
@@ -24,7 +26,9 @@ function populateList(plates = [], platesList) {
     platesList.innerHTML = plates.map((plate, i) => {
         return `
             <li>
-                <input type="checkbox" data-index=${i} id="item${i}" ${plate.done ? 'checked' : ''} />
+                <input type="checkbox" data-index=${i} id="item${i}" ${plate.done
+            ? 'checked'
+            : ''} />
                 <label for="item${i}">${plate.text}</label>
             </li>
         `;
@@ -34,7 +38,8 @@ function populateList(plates = [], platesList) {
 function toggleDone(e) {
     // e.target.matches() new api in browser.
     /* skip unless it's an input. only getting input checks. good example of event delegation where we listen for a click on something higher (here ul), and then inside we check if it's the actual target we want. */
-    if (!e.target.matches('input')) return;
+    if (!e.target.matches('input'))
+        return;
     const el = e.target;
     const index = el.dataset.index;
     items[index].done = !items[index].done;
@@ -43,8 +48,28 @@ function toggleDone(e) {
     populateList(items, itemsList);
 }
 
+function toggleAll(e) {
+    const action = e.target.dataset.action;
+
+    switch (action) {
+        case "check":
+            items.map((item) => item.done = true);
+            break;
+        case "uncheck":
+            items.map((item) => item.done = false);
+            break;
+        case "clear":
+        items = [];
+        break;
+    }
+
+    localStorage.setItem('items', JSON.stringify(items));
+    populateList(items, itemsList);
+}
+
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
+buttons.addEventListener('click', toggleAll);
 
 // does not exist yet on page load
 populateList(items, itemsList);

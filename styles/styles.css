@@ -33,14 +33,14 @@ svg {
     max-width: 350px;
     background: #eed5d2;
     box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
-    color: #8b636c;
+    color: #008b8b;
     letter-spacing: 0.1em;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .wrapper h2 {
     text-align: center;
-    margin: 0;
+    margin: 0 0 10px;
     font-family: 'Overpass', sans-serif;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     font-weight: 600;
@@ -74,7 +74,7 @@ svg {
 }
 
 .plates input:checked+label:before {
-    content: '🌮';
+    content: '🍝';
 }
 
 .add-items {
@@ -94,10 +94,7 @@ input[type=submit] {
     background: #8b7d7b;
     color: black;
     border: none;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-family: 'Raleway', sans-serif;
-}
 
-select {
-    margin-bottom: 12px;
 }
