@@ -53,10 +53,10 @@ function toggleAll(e) {
 
     switch (action) {
         case "check":
-            items.map((item) => item.done = true);
+            items.map(item => item.done = true);
             break;
         case "uncheck":
-            items.map((item) => item.done = false);
+            items.map(item => item.done = false);
             break;
         case "clear":
         items = [];
